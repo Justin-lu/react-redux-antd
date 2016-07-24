@@ -1,1 +1,31 @@
-{}
+{
+  "auth": {
+    "email": "justin@beansmile.com",
+    "password": "12345678"
+  },
+  "users": [
+    {
+      "id": 1,
+      "email": "justin@beansmile.com",
+      "name": "Justin"
+    },
+    {
+      "id": 2,
+      "email": "gdjyluxiaoyong@gmail.com",
+      "name": "Justin"
+    }
+  ],
+  "menus": [
+    {
+      "name": "首页",
+      "url": "home",
+      "icon": "home"
+    },
+    {
+      "name": "操作记录",
+      "url": "operation_log",
+      "icon": "operation_log"
+    }
+
+  ]
+}

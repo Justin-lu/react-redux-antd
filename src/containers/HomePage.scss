@@ -1,0 +1,21 @@
+// color variables
+$lightGrey: #e9e9e9;
+
+.client-info {
+  .ant-row {
+    height: 30px;
+    line-height: 30px;
+    border-left: 1px solid $lightGrey;
+    border-top: 1px solid $lightGrey;
+    border-right: 1px solid $lightGrey;
+    &:last-child {
+      border-bottom: 1px solid $lightGrey;
+    }
+    .ant-col-12 {
+      padding-left: 15px;
+      &:first-child {
+        border-right: 1px solid $lightGrey;
+      }
+    }
+  }
+}
