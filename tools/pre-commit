@@ -1,5 +1,14 @@
 #!/bin/sh
 
+# -n options for skip validate javascript
+while getopts ":n:" o; do
+    case "${o}" in
+        n)
+            exit 1
+            ;;
+    esac
+done
+
 STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep ".jsx\{0,1\}$")
 
 if [[ "$STAGED_FILES" = "" ]]; then
