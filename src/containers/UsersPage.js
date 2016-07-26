@@ -50,7 +50,7 @@ class UsersPage extends React.Component {
     if(Object.keys(filters).length !== 0) {
       // enum filters
       [{
-        key: "status_cn", filterParams: "status_in"
+        key: "roles", filterParams: "roles_in"
       }].map(item => {
         if(filters[item.key]){
           filtersField[`q[${item.filterParams}]`] = filters[item.key];

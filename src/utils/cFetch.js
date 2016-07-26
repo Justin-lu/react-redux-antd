@@ -94,7 +94,7 @@ function toQueryString(object) {
 
 // TODO: 用户登陆之后，需保存Token至cookie
 function cFetch(url, options) {
-  let mergeUrl = new URL(API_CONFIG.base_uri + url);
+  let mergeUrl = API_CONFIG.baseUri + url;
   const defaultOptions = {
     method: 'GET'
   };

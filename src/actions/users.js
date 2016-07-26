@@ -32,7 +32,7 @@ function usersError(message) {
 export function fetchUsers(params = { page: 1, per_page: 10 }) {
   return dispatch => {
     dispatch(requestUsers());
-    cFetch(API_CONFIG.users, { method: "GET", params: params }).then((response) => {
+    return cFetch(API_CONFIG.users, { method: "GET", params: params }).then((response) => {
       if (response.jsonResult.error_code === 4001) {
         dispatch(usersError(response.jsonResult.error_message));
         message.error(response.jsonResult.error_message);
