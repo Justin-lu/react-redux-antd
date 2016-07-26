@@ -9,5 +9,6 @@ if(process.env.NODE_ENV == "development"){
 
 export const API_CONFIG = {
   base_uri: baseUri,
-  auth: 'auth'
+  auth: 'auth',
+  users: 'users'
 };

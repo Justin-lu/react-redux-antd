@@ -3,18 +3,27 @@
     "email": "justin@beansmile.com",
     "password": "12345678"
   },
-  "users": [
-    {
+  "users": {
+    "meta": {
+      "total": 2,
+      "perPage": 10,
+      "page": 1
+    },
+    "data": [{
       "id": 1,
       "email": "justin@beansmile.com",
-      "name": "Justin"
+      "name": "Justin",
+      "roles": "管理员",
+      "created_at": "Mon Jul 25 2016 16:31:45 GMT+0800 (CST)"
     },
     {
       "id": 2,
       "email": "gdjyluxiaoyong@gmail.com",
-      "name": "Justin"
-    }
-  ],
+      "name": "Justin Lu",
+      "roles": "普通用户",
+      "created_at": "Mon Oct 10 2016 08:00:00 GMT+0800 (CST)"
+    }]
+  },
   "menus": [
     {
       "name": "首页",

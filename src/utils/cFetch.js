@@ -93,7 +93,7 @@ function toQueryString(object) {
 
 
 // TODO: 用户登陆之后，需保存Token至cookie
-function yFetch(url, options) {
+function cFetch(url, options) {
   let mergeUrl = new URL(API_CONFIG.base_uri + url);
   const defaultOptions = {
     method: 'GET'
@@ -121,4 +121,4 @@ function yFetch(url, options) {
     });
 }
 
-export default yFetch;
+export default cFetch;

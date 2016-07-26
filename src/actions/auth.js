@@ -2,7 +2,7 @@ import {
   LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE,
   LOGOUT_SUCCESS, LOGOUT_REQUEST
 } from './../constants/actionTypes';
-import yFetch from './../utils/yFetch';
+import cFetch from './../utils/cFetch';
 import cookie from 'js-cookie';
 
 import { API_CONFIG } from './../config/api';
@@ -53,7 +53,7 @@ function receiveLogout() {
 export function loginUser(creds, cbk) {
   return dispatch => {
     dispatch(requestLogin(creds));
-    yFetch(API_CONFIG.auth, { method: "POST", body: JSON.stringify(creds) }).then((response) => {
+    cFetch(API_CONFIG.auth, { method: "POST", body: JSON.stringify(creds) }).then((response) => {
       if (response.jsonResult.error_code === 4001) {
         dispatch(loginError(response.jsonResult.error_message));
         cbk(creds.email, response.jsonResult.error_message);
