@@ -3,7 +3,7 @@ import {
 } from './../constants/actionTypes';
 import initialState from './initialState';
 
-export default function roles(state = initialState.users, action) {
+export default function users(state = initialState.users, action) {
   switch (action.type) {
     case USERS_QERUEST:
       return Object.assign({}, state, {

@@ -25,7 +25,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-class UsersPage extends React.Component {
+export class UsersPage extends React.Component {
   static propTypes = {
     fetchUsers: React.PropTypes.func,
     users: React.PropTypes.object
@@ -141,7 +141,9 @@ class UsersPage extends React.Component {
 
     const pagination = {
       showSizeChanger: true,
-      total: meta.total
+      total: meta.total,
+      pageSize: meta.perPage,
+      pageSizeOptions: ['1','10','20','40']
     };
     const { selectedRowKeys } = this.state;
     const rowSelection = {

@@ -13,5 +13,6 @@ describe('<NotFoundPage />', () => {
     const expected = '404';
 
     expect(actual).to.equal(expected);
+    expect(wrapper.find('h1').hasClass('title')).to.equal(true);
   });
 });
