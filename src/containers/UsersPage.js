@@ -20,6 +20,7 @@ function mapStateToProps(state) {
 
 // Which action creators does it want to receive by props?
 function mapDispatchToProps(dispatch) {
+  // bindActionCreators(ActionCreators, dispatch)
   return {
     fetchUsers: (params) => dispatch(fetchUsers(params))
   };

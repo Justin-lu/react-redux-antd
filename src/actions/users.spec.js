@@ -12,7 +12,7 @@ const middlewares = [ thunk ];
 const mockStore = configureMockStore(middlewares);
 const db = require('./../data/db.json');
 
-describe('users actions', function() {
+describe('Users actions', function() {
   afterEach(() => {
     nock.cleanAll();
   });
