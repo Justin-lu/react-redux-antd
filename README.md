@@ -5,10 +5,10 @@
 ![](http://ww4.sinaimg.cn/large/785cd1e3gw1f69xey2om7g20tb0fs1kx.gif)
 - eslint both of terminal and pre-commit
 ![](http://ww1.sinaimg.cn/large/785cd1e3gw1f69xiq41uog20tb0fsn8e.gif)
-![](http://ww3.sinaimg.cn/large/785cd1e3gw1f69xknor8sg20tb0fs0ug.gif)
+![](http://ww2.sinaimg.cn/large/785cd1e3gw1f69zn0p20gj21je0jan1f.jpg)
 - unit test of react/redux
 ![](http://ww3.sinaimg.cn/large/785cd1e3gw1f69x6lccmij21020m2juk.jpg)
-![](http://ww3.sinaimg.cn/large/785cd1e3gw1f69xofrmkeg20tb0fs1as.gif)
+![](http://ww2.sinaimg.cn/large/785cd1e3gw1f69zp1v97ij21kw0u8td8.jpg)
 - es6/webapck
 - sass support
 - UI Kit: Ant Design
