@@ -23,6 +23,11 @@
 git clone git@github.com:Justin-lu/react-redux-best-practice.git demo
 cd demo
 npm install
+
+# run dev
+npm run start
+# run mock server
+npm run start:mock
 ```
 
 ### npm script
@@ -48,3 +53,10 @@ npm run test:cover
 
 ```
 
+### eslint
+
+- enable pre-commit hook
+
+```shell
+cd .git/hooks/ && ln -s ./../../tools/pre-commit pre-commit
+```
