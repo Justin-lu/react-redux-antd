@@ -12,6 +12,13 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 import config from '../webpack.config.dev';
 
 const bundler = webpack(config);
+import proxy from 'http-proxy-middleware';
+
+const apiProxy = proxy('/api/v1', {
+    target: 'http://localhost:4000',
+    changeOrigin: true,
+    ws: true
+});
 
 // Run Browsersync and use middleware for Hot Module Replacement
 browserSync({
@@ -19,6 +26,7 @@ browserSync({
     baseDir: 'src',
 
     middleware: [
+      apiProxy,
       webpackDevMiddleware(bundler, {
         // Dev middleware can't access config, so we provide publicPath
         publicPath: config.output.publicPath,
