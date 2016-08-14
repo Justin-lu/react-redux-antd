@@ -2,6 +2,9 @@ import webpack from 'webpack';
 import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+const extractCss = new ExtractTextPlugin('app.[contenthash].css');
+const extractAntd = new ExtractTextPlugin('antd.[contenthash].css');
+
 const updateIndexHTML = require('./tools/updateIndexHTML');
 
 const GLOBALS = {
@@ -24,7 +27,8 @@ export default {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin(GLOBALS), // Tells React to build in prod mode. https://facebook.github.io/react/downloads.html
-    new ExtractTextPlugin('app.[contenthash].css'),
+    extractAntd,
+    extractCss,
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin(),
     new HtmlWebpackPlugin({
@@ -51,7 +55,8 @@ export default {
       {test: /\.(jpe?g|png|gif)$/i, loaders: ['file']},
       {test: /\.ico$/, loader: 'file-loader?name=[name].[ext]'},
       // https://github.com/webpack/style-loader#recommended-configuration
-      {test: /(\.css|\.scss)$/, loaders: ['style', 'css', 'sass']}
+      {test: /(\.css|\.scss)$/, include: path.join(__dirname, 'node_modules/antd'), loader: extractAntd.extract('css')},
+      {test: /(\.css|\.scss)$/, include: path.join(__dirname, 'src'), loader: extractCss.extract('css!sass')}
     ]
   }
 };
