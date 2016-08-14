@@ -2,6 +2,8 @@ import webpack from 'webpack';
 import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import autoprefixer from 'autoprefixer';
+
 const extractCss = new ExtractTextPlugin('app.[contenthash].css');
 const extractAntd = new ExtractTextPlugin('antd.[contenthash].css');
 
@@ -56,7 +58,8 @@ export default {
       {test: /\.ico$/, loader: 'file-loader?name=[name].[ext]'},
       // https://github.com/webpack/style-loader#recommended-configuration
       {test: /(\.css|\.scss)$/, include: path.join(__dirname, 'node_modules/antd'), loader: extractAntd.extract('css')},
-      {test: /(\.css|\.scss)$/, include: path.join(__dirname, 'src'), loader: extractCss.extract('css!sass')}
+      {test: /(\.css|\.scss)$/, include: path.join(__dirname, 'src'), loader: extractCss.extract('css!postcss!sass')}
     ]
-  }
+  },
+  postcss: ()=> [autoprefixer]
 };
