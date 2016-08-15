@@ -32,7 +32,15 @@ webpack(config).run((error, stats) => {
 
   spinner.stop();
 
-  console.log(`Webpack stats: ${stats}`);
+  console.log(stats.toString({
+    colors: true,
+    hash: true,
+    version: true,
+    children: false,
+    chunks: false,
+    modules: false,
+    chunkModules: false
+  }));
 
   // if we got this far, the build succeeded.
   console.log(chalkSuccess('Your app is compiled in production mode in /dist. It\'s ready to roll!'));

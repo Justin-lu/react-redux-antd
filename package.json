@@ -79,7 +79,7 @@
     "nock": "8.0.0",
     "node-sass": "3.8.0",
     "npm-run-all": "2.3.0",
-    "ora": "0.2.3",
+    "ora": "0.3.0",
     "postcss-loader": "0.10.0",
     "react-addons-test-utils": "15.2.1",
     "redux-logger": "2.6.1",

@@ -32,7 +32,11 @@ export default {
     extractAntd,
     extractCss,
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
     new HtmlWebpackPlugin({
       filename: `${__dirname}/dist/index.html`,
       template: `${__dirname}/src/index.html`,
