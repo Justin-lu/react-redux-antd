@@ -20,7 +20,7 @@
 ## Getting Started
 ### install
 ```
-git clone git@github.com:Justin-lu/react-redux-best-practice.git demo
+git clone git@github.com:Justin-lu/react-redux-antd.git demo
 cd demo
 npm install
 
