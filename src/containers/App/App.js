@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
-import Login from './Login/Login';
+import Login from './../Login/Login';
 import { Link } from 'react-router';
 import './App.scss';
 import { Menu, Breadcrumb, Icon } from 'antd';

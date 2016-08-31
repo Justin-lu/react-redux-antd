@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import CustomTable from './../components/CustomTable';
-import StringFilterDropdown from './../components/StringFilterDropdown';
-import DateTimeFilterDropdown from './../components/DateTimeFilterDropdown';
+import CustomTable from './../../components/CustomTable';
+import StringFilterDropdown from './../../components/StringFilterDropdown';
+import DateTimeFilterDropdown from './../../components/DateTimeFilterDropdown';
 
-import { fetchUsers } from './../actions/users';
+import { fetchUsers } from './../../actions/users';
 import { Input, Button, Row, Col } from 'antd';
 const InputGroup = Input.Group;
 const ButtonGroup = Button.Group;
