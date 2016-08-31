@@ -7,7 +7,7 @@ import { mount, shallow } from 'enzyme';
 import { UsersPage } from './UsersPage';
 import { Col } from 'antd';
 
-const db = require('./../data/db.json');
+const db = require('./../../data/db.json');
 
 chai.use(sinonChai);
 
