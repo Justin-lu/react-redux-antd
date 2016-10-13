@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import nock from 'nock';
 import { expect } from 'chai';
 import {
-  USERS_QERUEST, USERS_SUCCESS
+  USERS_REQUEST, USERS_SUCCESS
 } from './../constants/actionTypes';
 import { fetchUsers } from './users';
 import { API_CONFIG } from './../config/api';
@@ -23,7 +23,7 @@ describe('Users actions', function() {
       })
       .reply(200, db.users);
     const expectedActions = [
-      { type: USERS_QERUEST, isFetching: true },
+      { type: USERS_REQUEST, isFetching: true },
       { type: USERS_SUCCESS, isFetching: false, users: db.users }
     ];
     const store = mockStore();

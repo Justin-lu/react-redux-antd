@@ -1,5 +1,5 @@
 import {
-  USERS_QERUEST, USERS_SUCCESS, USERS_FAILURE
+  USERS_REQUEST, USERS_SUCCESS, USERS_FAILURE
 } from './../constants/actionTypes';
 import cFetch from './../utils/cFetch';
 
@@ -8,7 +8,7 @@ import { message } from 'antd';
 
 function requestUsers() {
   return {
-    type: USERS_QERUEST,
+    type: USERS_REQUEST,
     isFetching: true
   };
 }
