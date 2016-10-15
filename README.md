@@ -19,10 +19,12 @@
 
 ## Getting Started
 ### install
+
 ```
+npm install --global yarn # install yarn
 git clone git@github.com:Justin-lu/react-redux-antd.git demo
 cd demo
-npm install
+yarn
 
 # run dev
 npm run start

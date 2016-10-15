@@ -1,5 +1,5 @@
 {
-  "name": "react-redux-best-practice",
+  "name": "react-redux-antd",
   "version": "1.0.0",
   "description": "react redux best practice",
   "main": "index.js",
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Justin-lu/react-redux-best-practice.git"
+    "url": "git@github.com:Justin-lu/react-redux-antd.git"
   },
   "dependencies": {
     "antd": "1.11.2",
