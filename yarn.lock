@@ -5249,8 +5249,8 @@ rc-cascader@~0.10.1:
     rc-trigger "1.x"
 
 rc-checkbox@~1.4.0, rc-checkbox@1.x:
-  version "1.4.2"
-  resolved "https://registry.npmjs.org/rc-checkbox/-/rc-checkbox-1.4.2.tgz#fdf9afb4d8e38d514fd7e1508a12dae343e66544"
+  version "1.4.0"
+  resolved "https://registry.npm.taobao.org/rc-checkbox/download/rc-checkbox-1.4.0.tgz#9719befbc98d80239d79b83f8f953885cd23e462"
   dependencies:
     classnames "2.x"
     react-addons-pure-render-mixin "15.x"
