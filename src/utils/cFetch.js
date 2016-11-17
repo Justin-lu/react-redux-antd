@@ -2,8 +2,9 @@ import fetch from 'isomorphic-fetch';
 require('es6-promise').polyfill();
 
 import cookie from 'js-cookie';
+import StandardError from 'standard-error';
+import { message } from 'antd';
 import { API_CONFIG } from './../config/api';
-
 import { Modal } from 'antd';
 
 const errorMessages = (res) => `${res.status} ${res.statusText}`;
@@ -33,8 +34,22 @@ function check404(res) {
   return res;
 }
 
+function checkStatus(response) {
+  if (response.status >= 200 && response.status < 300) {
+    return response;
+  } else {
+    // 这里补充更多错误参数
+    return response.text().then(errorMsg => {
+      return new StandardError({
+        statusCode: response.status,
+        msg: errorMsg
+      });
+    }).then(err => { throw err; });
+  }
+}
+
 function jsonParse(res) {
-  return res.json().then(jsonResult => ({ ...res, jsonResult }));
+  return res.json();
 }
 
 function setUriParam(keys, value, keyPostfix) {
@@ -92,7 +107,6 @@ function toQueryString(object) {
 }
 
 
-// TODO: 用户登陆之后，需保存Token至cookie
 function cFetch(url, options) {
   let mergeUrl = API_CONFIG.baseUri + url;
   const defaultOptions = {
@@ -114,11 +128,16 @@ function cFetch(url, options) {
   return fetch(mergeUrl, opts)
     .then(check401)
     .then(check404)
-    .then(jsonParse)
-    .catch( (error) => {
-      console.log('request failed', error); // eslint-disable-line  no-console
-      return { error };
-    });
+    .then(checkStatus)
+    .then(jsonParse);
 }
+
+//catch all the unhandled exception
+window.addEventListener("unhandledrejection", function(err) {
+  const ex = err.reason;
+  if(ex.constructor != null && ex.constructor == StandardError || ex.msg != null){
+    message.error(ex.msg, 2.5);
+  }
+});
 
 export default cFetch;
