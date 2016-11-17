@@ -70,7 +70,7 @@ class Login extends Component {
     return (
       <div className="login-container">
         <div className="login-mask"/>
-        <Form className="login-content" horizontal onSubmit={this.handleSubmit} form={this.props.form}>
+        <Form className="login-content" horizontal onSubmit={this.handleSubmit}>
           <h2>React Redux Demo</h2>
           <FormItem label="账号" hasFeedback>
             <Input

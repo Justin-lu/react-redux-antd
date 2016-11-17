@@ -1,6 +1,7 @@
 // 这里统一存放action常量
 
 // auth.js
+export const USER = 'USER';
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
