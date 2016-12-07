@@ -3,9 +3,8 @@ require('es6-promise').polyfill();
 
 import cookie from 'js-cookie';
 import StandardError from 'standard-error';
-import { message } from 'antd';
 import { API_CONFIG } from './../config/api';
-import { Modal } from 'antd';
+import { message, Modal } from 'antd';
 
 const errorMessages = (res) => `${res.status} ${res.statusText}`;
 

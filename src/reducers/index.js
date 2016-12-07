@@ -12,7 +12,6 @@ import initialState from './initialState';
 
 const users = reducersGenerate(USER, initialState.users);
 
-
 const rootReducer = combineReducers({
   routing: routerReducer,
   auth,

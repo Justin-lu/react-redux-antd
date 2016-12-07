@@ -1,6 +1,4 @@
-import {
-  USER
-} from './../constants/actionTypes';
+import { USER } from './../constants/actionTypes';
 import cFetch from './../utils/cFetch';
 
 import { API_CONFIG } from './../config/api';
