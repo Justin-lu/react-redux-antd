@@ -3,10 +3,14 @@ node_js:
   - "6"
   - "5"
   - "5.1"
+  - "5.10"
   - "4"
   - "4.2"
   - "4.1"
   - "4.0"
+
 after_success:
   # Send coverage data to coveralls.
   - npm run test:cover:travis
+
+cache: yarn
