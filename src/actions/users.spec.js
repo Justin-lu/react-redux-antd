@@ -1,14 +1,15 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import promiseMiddleware from './../utils/promise-middleware';
 import nock from 'nock';
 import { expect } from 'chai';
 import {
-  USERS_REQUEST, USERS_SUCCESS
+  USER
 } from './../constants/actionTypes';
 import { fetchUsers } from './users';
 import { API_CONFIG } from './../config/api';
 
-const middlewares = [ thunk ];
+const middlewares = [ thunk, promiseMiddleware() ];
 const mockStore = configureMockStore(middlewares);
 const db = require('./../data/db.json');
 
@@ -23,14 +24,14 @@ describe('Users actions', function() {
       })
       .reply(200, db.users);
     const expectedActions = [
-      { type: USERS_REQUEST, isFetching: true },
-      { type: USERS_SUCCESS, isFetching: false, users: db.users }
+      { type: `${USER}_PENDING`},
+      { type: `${USER}_FULFILLED`, payload: {data: db.users.data, meta: db.users.meta } }
     ];
     const store = mockStore();
 
-    return store.dispatch(fetchUsers())
-      .then(() => {
-        expect(store.getActions()).to.deep.equal(expectedActions);
-      });
+    return store.dispatch(fetchUsers()).then(() => {
+      expect(store.getActions()).to.deep.equal(expectedActions);
+    });
+
   });
 });
