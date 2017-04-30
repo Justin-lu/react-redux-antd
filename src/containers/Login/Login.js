@@ -13,13 +13,12 @@ function noop() {
 }
 
 class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.loginFaileCallback = this.loginFaileCallback.bind(this);
+  static propTypes = {
+    form: PropTypes.object.isRequired,
+    dispatch: PropTypes.func.isRequired
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
 
     const { dispatch } = this.props;
@@ -32,7 +31,7 @@ class Login extends Component {
     });
   }
 
-  loginFaileCallback(email, message){
+  loginFaileCallback = (email, message) => {
     const { setFields } = this.props.form;
     const newValue = {
       email: {
@@ -46,8 +45,8 @@ class Login extends Component {
   }
 
   render() {
-    const { getFieldProps } = this.props.form;
-    const emailProps = getFieldProps('email', {
+    const { getFieldDecorator } = this.props.form;
+    const emailProps = getFieldDecorator('email', {
       validate: [{
         rules: [
           { required: true }
@@ -61,7 +60,7 @@ class Login extends Component {
       }]
     });
 
-    const passwordProps = getFieldProps('password', {
+    const passwordProps = getFieldDecorator('password', {
       rules: [
         { required: true, min: 8, message: '密码至少为 8 个字符' }
       ]
@@ -70,18 +69,27 @@ class Login extends Component {
     return (
       <div className="login-container">
         <div className="login-mask"/>
-        <Form className="login-content" horizontal onSubmit={this.handleSubmit}>
+        <Form className="login-content" layout="horizontal" onSubmit={this.handleSubmit}>
           <h2>React Redux Demo</h2>
           <FormItem label="账号" hasFeedback>
-            <Input
-              {...emailProps}
-              placeholder="请输入账号"
-              type="email"
-            />
+            {emailProps(
+              <Input
+                placeholder="请输入账号"
+                type="email"
+              />
+            )}
           </FormItem>
           <FormItem label="密码" hasFeedback>
-            <Input {...passwordProps} type="password" autoComplete="off" placeholder="请输入密码"
-              onContextMenu={noop} onPaste={noop} onCopy={noop} onCut={noop} />
+            {
+              passwordProps(
+                <Input
+                  type="password"
+                  autoComplete="off"
+                  placeholder="请输入密码"
+                  onContextMenu={noop} onPaste={noop} onCopy={noop} onCut={noop}
+                />
+              )
+            }
           </FormItem>
           <FormItem>
             <Button className="ant-col-24" type="primary" htmlType="submit">登录</Button>
@@ -91,11 +99,6 @@ class Login extends Component {
     );
   }
 }
-
-Login.propTypes = {
-  form: PropTypes.object.isRequired,
-  dispatch: PropTypes.func.isRequired
-};
 
 function mapStateToProps(state) {
   const { auth } = state;

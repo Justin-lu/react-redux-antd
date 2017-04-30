@@ -10,7 +10,6 @@ import { Input, Button, Row, Col } from 'antd';
 const InputGroup = Input.Group;
 const ButtonGroup = Button.Group;
 
-// Which part of the Redux global state does our component want to receive as props?
 function mapStateToProps(state) {
   const { users } = state;
   return {
@@ -18,9 +17,7 @@ function mapStateToProps(state) {
   };
 }
 
-// Which action creators does it want to receive by props?
 function mapDispatchToProps(dispatch) {
-  // bindActionCreators(ActionCreators, dispatch)
   return {
     fetchUsers: (params) => dispatch(fetchUsers(params))
   };
@@ -165,7 +162,7 @@ export class UsersPage extends React.Component {
             </div>
           </Col>
           <Col span={8} offset={8}>
-            <div className="ant-search-input-wrapper">
+            <div>
               <InputGroup className="ant-search-input">
                 <Input placeholder="高级搜索"/>
                 <div className="ant-input-group-wrap">

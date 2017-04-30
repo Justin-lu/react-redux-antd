@@ -27,7 +27,7 @@
     "url": "git@github.com:Justin-lu/react-redux-antd.git"
   },
   "dependencies": {
-    "antd": "1.11.2",
+    "antd": "^2.9.3",
     "dateformat": "1.0.12",
     "es6-promise": "3.2.1",
     "isomorphic-fetch": "2.2.1",
@@ -80,7 +80,7 @@
     "json-server": "0.8.19",
     "mocha": "3.0.2",
     "nock": "8.0.0",
-    "node-sass": "3.8.0",
+    "node-sass": "^4.5.2",
     "npm-run-all": "3.0.0",
     "ora": "0.3.0",
     "postcss-loader": "0.11.1",
