@@ -1,4 +1,6 @@
 ## Feature List
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Justin-lu/react-redux-antd.svg)](https://greenkeeper.io/)
 - hot reloading/browser-sync/redux devtools on dev build
 ![](http://ww1.sinaimg.cn/large/785cd1e3gw1f69xb4vta2g20tb0fs7c5.gif)
 - minify/chunkhash/trackJS on production build
